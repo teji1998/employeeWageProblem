@@ -9,6 +9,8 @@ namespace employeeWageProblem
             //constant
             const int IS_PRESENT = 1;
             const int HOURLY_WAGE = 20;
+            const int FULL_TIME_EMPLOYEE_HOURS = 8;
+            const int NOT_PRESENT_EMPLOYEE_HOURS = 0;
 
             //variables
             int employeeHours = 0;
@@ -25,16 +27,18 @@ namespace employeeWageProblem
             //To check the employee hours
             if (attendance == IS_PRESENT)
             {
-                employeeHours = 8;
+                employeeHours = FULL_TIME_EMPLOYEE_HOURS;
                 Console.WriteLine("The employee is present!");
             }
             else
             {
-                employeeHours = 0;
+                employeeHours = NOT_PRESENT_EMPLOYEE_HOURS;
                 Console.WriteLine("The employee is not present!");
             }
 
+            //To calculate daily wage of employee 
             employeeWage = HOURLY_WAGE * employeeHours;
+
             Console.WriteLine("The number of working hours of employee is : " + employeeHours);
             Console.WriteLine("The daily wage of the employee is : " + employeeWage);
         }
