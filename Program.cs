@@ -10,7 +10,7 @@ namespace employeeWageProblem
             const int IS_PRESENT = 1;
             const int HOURLY_WAGE = 20;
             const int FULL_TIME_EMPLOYEE_HOURS = 8;
-            const int NOT_PRESENT_EMPLOYEE_HOURS = 0;
+            const int ABSENT_EMPLOYEE_HOURS = 0;
 
             //variables
             int employeeHours = 0;
@@ -32,8 +32,8 @@ namespace employeeWageProblem
             }
             else
             {
-                employeeHours = NOT_PRESENT_EMPLOYEE_HOURS;
-                Console.WriteLine("The employee is not present!");
+                employeeHours = ABSENT_EMPLOYEE_HOURS;
+                Console.WriteLine("The employee is absent!");
             }
 
             //To calculate daily wage of employee 
