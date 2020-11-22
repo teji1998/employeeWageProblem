@@ -7,9 +7,11 @@ namespace employeeWageProblem
         static void Main(string[] args)
         {
             //constant
-            const int IS_PRESENT = 1;
+            const int IS_FULL_TIME = 1;
+            const int IS_PART_TIME = 2;
             const int HOURLY_WAGE = 20;
             const int FULL_TIME_EMPLOYEE_HOURS = 8;
+            const int PART_TIME_EMPLOYEE_HOURS = 4;
             const int ABSENT_EMPLOYEE_HOURS = 0;
 
             //variables
@@ -21,19 +23,24 @@ namespace employeeWageProblem
 
             //Random class reference
             Random random = new Random();
-            int attendance = random.Next(0, 2);
+            int attendance = random.Next(0, 3);
 
             // using if else loop to check if employee is present or not
-            //To check the employee hours
-            if (attendance == IS_PRESENT)
+            //To check working hours for part-time or full-time employee
+            if (attendance == IS_FULL_TIME)
             {
                 employeeHours = FULL_TIME_EMPLOYEE_HOURS;
-                Console.WriteLine("The employee is present!");
+                Console.WriteLine("The full-time employee is present!");
+            }
+            else if (attendance == IS_PART_TIME)
+            {
+                employeeHours = PART_TIME_EMPLOYEE_HOURS;
+                Console.WriteLine("The part-time employee is present!");
             }
             else
             {
                 employeeHours = ABSENT_EMPLOYEE_HOURS;
-                Console.WriteLine("The employee is absent!");
+                Console.WriteLine("The employee is absent");
             }
 
             //To calculate daily wage of employee 
