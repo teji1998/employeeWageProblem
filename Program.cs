@@ -26,10 +26,9 @@ namespace employeeWageProblem
             //Welcome message
             Console.WriteLine("Welcome to employee wage computation problem!");
 
-            //using for loop
-            /*for (int days = 0; days <= NUMBER_OF_WORKING_DAYS; days++)*/
+            
 
-            while(totalEmployeeHours <= MAXIMUM_WORKING_HOURS && totalEmployeeDays <= NUMBER_OF_WORKING_DAYS)
+            while(totalEmployeeHours <= MAXIMUM_WORKING_HOURS && totalEmployeeDays < NUMBER_OF_WORKING_DAYS)
             {
                 totalEmployeeDays++;
 
@@ -61,6 +60,7 @@ namespace employeeWageProblem
                 Console.WriteLine("Daily wage : " + employeeWage);
                 totalEmployeeWage += employeeWage;
             }
+            
             Console.WriteLine("The monthly wage of the employee is : " + totalEmployeeWage);
         }
     }
