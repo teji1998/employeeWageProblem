@@ -41,26 +41,8 @@ namespace employeeWageProblem
                     employeeHours = ABSENT_EMPLOYEE_HOURS;
                     Console.WriteLine("The employee is absent");
                     break;
-
             }
-                
-
-            /*if (attendance == IS_FULL_TIME)
-            {
-                employeeHours = FULL_TIME_EMPLOYEE_HOURS;
-                Console.WriteLine("The full-time employee is present!");
-            }
-            else if (attendance == IS_PART_TIME)
-            {
-                employeeHours = PART_TIME_EMPLOYEE_HOURS;
-                Console.WriteLine("The part-time employee is present!");
-            }
-            else
-            {
-                employeeHours = ABSENT_EMPLOYEE_HOURS;
-                Console.WriteLine("The employee is absent");
-            }*/
-
+      
             //To calculate daily wage of employee 
             employeeWage = HOURLY_WAGE * employeeHours;
 
