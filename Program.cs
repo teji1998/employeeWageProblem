@@ -14,18 +14,25 @@ namespace employeeWageProblem
             const int PART_TIME_EMPLOYEE_HOURS = 4;
             const int ABSENT_EMPLOYEE_HOURS = 0;
             const int NUMBER_OF_WORKING_DAYS = 20;
+            const int MAXIMUM_WORKING_HOURS = 100;
 
             //variables
             int employeeHours = 0;
             int employeeWage = 0;
             int totalEmployeeWage = 0;
+            int totalEmployeeHours = 0;
+            int totalEmployeeDays = 0;
 
             //Welcome message
             Console.WriteLine("Welcome to employee wage computation problem!");
 
             //using for loop
-            for (int days = 0; days <= NUMBER_OF_WORKING_DAYS; days++)
+            /*for (int days = 0; days <= NUMBER_OF_WORKING_DAYS; days++)*/
+
+            while(totalEmployeeHours <= MAXIMUM_WORKING_HOURS && totalEmployeeDays <= NUMBER_OF_WORKING_DAYS)
             {
+                totalEmployeeDays++;
+
                 //Random class reference
                 Random random = new Random();
                 int attendance = random.Next(0, 3);
@@ -48,14 +55,11 @@ namespace employeeWageProblem
                         break;
                 }
 
-                //To calculate daily wage of employee 
+                totalEmployeeHours += employeeHours;
+                Console.WriteLine("For day : " + totalEmployeeDays + " and hours " + employeeHours);
                 employeeWage = HOURLY_WAGE * employeeHours;
-
-                //To calculate monthly wage of employee
+                Console.WriteLine("Daily wage : " + employeeWage);
                 totalEmployeeWage += employeeWage;
-
-                Console.WriteLine("The number of working hours of employee is : " + employeeHours);
-                Console.WriteLine("The daily wage of the employee is : " + employeeWage + " for day " + days);
             }
             Console.WriteLine("The monthly wage of the employee is : " + totalEmployeeWage);
         }
