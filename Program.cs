@@ -15,6 +15,7 @@ namespace employeeWageProblem
         const int NUMBER_OF_WORKING_DAYS = 20;
         const int MAXIMUM_WORKING_HOURS = 100;
 
+        //To check if employee present or not
         public static int EmployeeCheck()
         {
             //Random class reference
@@ -30,6 +31,7 @@ namespace employeeWageProblem
             Console.WriteLine("The monthly wage of the employee is : " + ComputingTheEmployeeSalary());
         }
 
+        //Method to find the total salary of employee
         public static int ComputingTheEmployeeSalary()
         {
         //variables
@@ -37,34 +39,37 @@ namespace employeeWageProblem
         int employeeWage = 0;
         int totalEmployeeWage = 0;
         int totalEmployeeHours = 0;
-            int totalEmployeeDays = 0;
+        int totalEmployeeDays = 0;
+        
         while(totalEmployeeHours <= MAXIMUM_WORKING_HOURS && totalEmployeeDays<NUMBER_OF_WORKING_DAYS)
         {
-                totalEmployeeDays++;
+            totalEmployeeDays++;
                 
-                // using switch case to check if employee is present or not
-                //To check working hours for part-time or full-time employee
-                switch (EmployeeCheck())
-                {
-                    case IS_FULL_TIME:
-                        employeeHours = FULL_TIME_EMPLOYEE_HOURS;
-                        Console.WriteLine("The full-time employee is present!");
-                        break;
-                    case IS_PART_TIME:
-                        employeeHours = PART_TIME_EMPLOYEE_HOURS;
-                        Console.WriteLine("The part-time employee is present!");
-                        break;
-                    default:
-                        employeeHours = ABSENT_EMPLOYEE_HOURS;
-                        Console.WriteLine("The employee is absent");
-                        break;
-                            
-                }
-                totalEmployeeHours += employeeHours;
-                Console.WriteLine("For day : " + totalEmployeeDays + " and hours " + employeeHours);
-                employeeWage = HOURLY_WAGE* employeeHours;
-                Console.WriteLine("Daily wage : " + employeeWage);
-                totalEmployeeWage += employeeWage;
+           // using switch case to check if employee is present or not
+           // To check working hours for part-time or full-time employee
+           switch (EmployeeCheck())
+           {
+                case IS_FULL_TIME:
+                employeeHours = FULL_TIME_EMPLOYEE_HOURS;
+                Console.WriteLine("The full-time employee is present!");
+                break;
+
+                case IS_PART_TIME:
+                employeeHours = PART_TIME_EMPLOYEE_HOURS;
+                Console.WriteLine("The part-time employee is present!");
+                break;
+        
+                default:
+                employeeHours = ABSENT_EMPLOYEE_HOURS;
+                Console.WriteLine("The employee is absent");
+                break;
+                           
+           }
+           totalEmployeeHours += employeeHours;
+           Console.WriteLine("For day : " + totalEmployeeDays + " and hours " + employeeHours);
+           employeeWage = HOURLY_WAGE* employeeHours;
+           Console.WriteLine("Daily wage : " + employeeWage);
+           totalEmployeeWage += employeeWage;
         }
             return totalEmployeeWage;   
         }
